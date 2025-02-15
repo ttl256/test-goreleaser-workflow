@@ -1,3 +1,5 @@
+# Runs only when a tag [1] is pushed to the main branch
+
 name: Release
 
 on:
@@ -12,7 +14,7 @@ permissions:
 
 jobs:
   goreleaser:
-    if: github.ref_type == 'tag'
+    if: github.ref_type == 'tag' # [1]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
