@@ -44,4 +44,5 @@ func SetVersion(s string) {
 }
 
 func init() {
+	rootCmd.SetVersionTemplate(`{{printf "%s\n" .Version}}`)
 }

@@ -51,7 +51,7 @@ brews:
       system "#{bin}/{{ .ProjectName }} --version"
     repository:
       owner: ttl256
-      name: homebrew-tap-test-goreleaser-workflow
+      name: homebrew-test-goreleaser-workflow
       token: "{{ .Env.TAP_GITHUB_TOKEN }}"
 
 changelog:
