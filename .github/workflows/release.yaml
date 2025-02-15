@@ -12,6 +12,7 @@ permissions:
 
 jobs:
   goreleaser:
+    if: github.ref_type == 'tag'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
