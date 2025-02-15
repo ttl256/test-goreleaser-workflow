@@ -54,6 +54,20 @@ brews:
       name: homebrew-test-goreleaser-workflow
       token: "{{ .Env.TAP_GITHUB_TOKEN }}"
 
+nfpms:
+  - id: linux_packages
+    description: "Software to test goreleaser workflow"
+    formats:
+      - deb
+      - rpm
+
+publishers:
+  - name: fury.io
+    ids:
+      - linux_packages
+    dir: '{{ dir .ArtifactPath }}'
+    cmd: curl -F package=@{{ .ArtifactName }} https://{{ .Env.FURY_TOKEN }}@push.fury.io/ttl256/
+
 changelog:
   sort: asc
   filters:

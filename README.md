@@ -22,6 +22,6 @@ Usage: install.sh [-b <bindir>] [-d] [<tag>]
 ### MacOS (brew)
 
 ```sh
-brew tap ttl256/homebrew-tap-test-goreleaser-workflow && \
+brew tap ttl256/test-goreleaser-workflow && \
 brew install test-goreleaser-workflow
 ```
