@@ -39,5 +39,9 @@ func Execute() {
 	}
 }
 
+func SetVersion(s string) {
+	rootCmd.Version = s
+}
+
 func init() {
 }

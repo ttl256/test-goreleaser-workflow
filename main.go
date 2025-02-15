@@ -23,6 +23,11 @@ package main
 
 import "github.com/ttl256/test-goreleaser-workflow/cmd"
 
+var (
+	version = "default_version"
+)
+
 func main() {
+	cmd.SetVersion(version)
 	cmd.Execute()
 }
