@@ -1,28 +1,33 @@
+project_name: test-goreleaser-workflow
+
 before:
   hooks:
     - go mod download
 
 builds:
-  - env:
+  - binary: test-goreleaser-workflow
+    main: ./
+    flags:
+      - -trimpath
+    env:
       - CGO_ENABLED=0
     goos:
       - darwin
       - linux
       - freebsd
       - windows
-    goarch:
-      - amd64
-      - arm
-      - arm64
-    ignore:
+
+archives:
+  - formats:
+    - tar.gz
+    wrap_in_directory: true
+    format_overrides:
       - goos: windows
-        goarch: arm64
-      - goos: windows
-        goarch: arm
-      - goos: freebsd
-        goarch: arm64
-      - goos: freebsd
-        goarch: arm
+        formats:
+          - zip
+    files:
+      - LICENSE
+      - README.md
 
 changelog:
   sort: asc
