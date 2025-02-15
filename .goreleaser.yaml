@@ -50,6 +50,7 @@ brews:
     repository:
       owner: ttl256
       name: homebrew-tap-test-goreleaser-workflow
+      token: "{{ .Env.TAP_GITHUB_TOKEN }}"
 
 changelog:
   sort: asc
